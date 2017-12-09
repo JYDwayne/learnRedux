@@ -1,6 +1,43 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+//导入createStore函数
+import {
+  createStore
+} from 'redux';
+//导入reducer
+import todoApp from './reducer/reducer';
+
+// 导入action
+import {
+  addTodo,
+  toogleTodo,
+  setVisibilityFilter,
+  changeTodo
+} from './actions/action'
+
+
+let store = createStore(todoApp);
+
+// 打印初始状态
+console.log(store.getState())
+
+//注册监听器
+store.subscribe(() => console.log(store.getState()))
+
+//发起添加todo的action
+
+store.dispatch(addTodo('该吃药啦!!!'))
+store.dispatch(addTodo('zhihaole1'))
+store.dispatch(addTodo('又犯了'))
+store.dispatch(addTodo('怎么回事'))
+store.dispatch(addTodo('纳尼!!!?'))
+store.dispatch(addTodo('纳尼!!!?'))
+
+store.dispatch(toogleTodo(1))
 
 class App extends Component {
   render() {

@@ -6,6 +6,9 @@ export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
+export const CHANGE_TODONAME = 'CHANGE_TODONAME';
+
+
 /*
  *其他常亮
  */
@@ -37,21 +40,30 @@ export function toogleTodo(index) {
 export function setVisibilityFilter(filter) {
 	return {
 		type: SET_VISIBILITY_FILTER,
-		filiter
+		filter
 	}
 }
 
+
+// 修改某个todo的名字
+export function changeTodo(index, newName) {
+	return {
+		type: CHANGE_TODONAME,
+		index,
+		newName
+	}
+}
 
 /*
  *state形式
  */
 
-{
-	visibilityFilter: 'SHOW_ALL',
-	todos: [{
-		text: 'Consider Using Redux',
-		completed: true
-	}, {
-		text: 'Keep all state in a single tree'
-	}]
-}
+// {
+// 	visibilityFilter: 'SHOW_ALL',
+// 	todos: [{
+// 		text: 'Consider Using Redux',
+// 		completed: true
+// 	}, {
+// 		text: 'Keep all state in a single tree'
+// 	}]
+// }
