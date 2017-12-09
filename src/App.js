@@ -19,6 +19,10 @@ import {
   changeTodo
 } from './actions/action'
 
+// 导入容器组件
+import VisibleTodoList from './containers/VisibleTodoList'
+
+console.log(VisibleTodoList)
 
 let store = createStore(todoApp);
 
@@ -39,19 +43,41 @@ store.dispatch(addTodo('纳尼!!!?'))
 
 store.dispatch(toogleTodo(1))
 
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="App">
+//         <header className="App-header">
+//           <img src={logo} className="App-logo" alt="logo" />
+//           <h1 className="App-title">Welcome to React</h1>
+//         </header>
+//         <p className="App-intro">
+//           To get started, edit <code>src/App.js</code> and save to reload.
+//         </p>
+//       </div>
+//     );
+//   }
+// }
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <AddTodo />
+//         <VisibleTodoList />
+//         <Footer />
+//       </div>
+//     )
+//   }
+// }
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        hello world!
       </div>
-    );
+    )
   }
 }
 
