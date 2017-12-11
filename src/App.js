@@ -71,10 +71,17 @@ store.dispatch(toogleTodo(1))
 //   }
 // }
 
+class ClassWithObj extends Component {
+  render() {
+    return (<p>{this.props.children}</p>)
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div>
+        <ClassWithObj> <a href='http://www.baidu.com'>跳转!!!</a> </ClassWithObj>
         hello world!
       </div>
     )

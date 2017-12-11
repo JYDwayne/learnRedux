@@ -1,21 +1,23 @@
+/*
+ *创建FilterLink部分
+ */
+//引入react-redux库
 import {
 	connect
 } from 'react-redux';
 
-// 引入展示组件
-import Link from '../components/Link';
-
-//引入action
+// 引入action
 import {
 	setVisibilityFilter
 } from '../actions/action'
 
+import Link from '../components/Link'
+
 const mapStateToProps = (state, ownProps) => {
 	return {
-		active: ownProps.filter === state.setVisibilityFilter
+		active: state.visibilityFilter === ownProps.filter
 	}
 }
-
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
@@ -25,6 +27,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	}
 }
 
-const FilterLink = connect(mapStateToProps, mapDispatchToProps)(Link);
+const FilterLink = connect(mapStateToProps, mapDispatchToProps)(Link)
 
 export default FilterLink;

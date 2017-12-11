@@ -6,7 +6,8 @@ import TodoList from '../components/Todo'
 
 // 传入action
 import {
-	toggleTodo
+	toogleTodo,
+	setVisibilityFilter
 } from '../actions/action'
 
 //创建将state转换成props的函数
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onTodoClick: (id) => {
-			dispatch(toggleTodo(id))
+			dispatch(toogleTodo(id))
 		}
 	}
 }

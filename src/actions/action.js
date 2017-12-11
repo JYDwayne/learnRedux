@@ -10,7 +10,7 @@ export const CHANGE_TODONAME = 'CHANGE_TODONAME';
 
 
 /*
- *其他常亮
+ *其他常量
  */
 
 export const VisibilityFilters = {
