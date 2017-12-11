@@ -22,12 +22,8 @@ import {
 // 导入容器组件
 import VisibleTodoList from './containers/VisibleTodoList'
 
-console.log(VisibleTodoList)
 
 let store = createStore(todoApp);
-
-// 打印初始状态
-console.log(store.getState())
 
 //注册监听器
 store.subscribe(() => console.log(store.getState()))
