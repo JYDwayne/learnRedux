@@ -6,13 +6,12 @@ import Todo from './Todo'
 
 class TodoList extends Component {
 	render() {
-		console.log(this.props.todos)
 		return (
 			<ul>
 				{this.props.todos.map((item, index) => {
 					return <Todo
 						key={index}
-						{...item}
+						text={item.text}
 						onClick={ () => this.props.onTodoClick(index) }
 					/>
 				})}
