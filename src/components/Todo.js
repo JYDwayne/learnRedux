@@ -14,9 +14,10 @@ class Todo extends Component {
 				}
 			} > {
 				this.props.text
-			} < /li>)
-		}
+			} < /li>
+		)
 	}
+}
 
 
-	export default Todo;
+export default Todo;

@@ -80,9 +80,10 @@ function todos(state = [], action) {
 			]
 		case TOGGLE_TODO:
 			return state.map((item, index) => {
+				console.log(action)
 				if (index === action.index) {
 					return Object.assign({}, item, {
-						completed: !item.completed
+						completed: true
 					})
 				}
 				return item

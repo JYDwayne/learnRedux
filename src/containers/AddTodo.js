@@ -36,6 +36,36 @@ let AddTodo = ({
     </div>
 	)
 }
+
+// class AddTodo extends Component {
+// 	constructor() {
+// 		super();
+// 		this.input = undefined;
+// 	}
+
+// 	render() {
+// 		return (
+// 			<div>
+// 				<form onSubmit={e => {
+// 					e.preventDefault()
+// 					if (!this.input.value.trim()) {
+// 						return
+// 					}
+// 						this.props.dispatch(addTodo(this.input.value))
+// 						this.input.value = '';
+// 					}}>
+// 					<input ref={node => {
+// 						this.input = node
+// 					}} />
+// 					<button type="submit">
+// 						Add Todo
+// 					</button>
+// 				</form>
+// 			</div>
+// 		)
+// 	}
+// }
+
 AddTodo = connect()(AddTodo)
 
-export default AddTodo
+export default connect()(AddTodo)

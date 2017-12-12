@@ -2,7 +2,7 @@ import {
 	connect
 } from 'react-redux'
 //导入需要转换的展示组件
-import TodoList from '../components/Todo'
+import TodoList from '../components/TodoList'
 
 // 传入action
 import {
