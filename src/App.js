@@ -16,6 +16,9 @@ import {
 import VisibleTodoList from './containers/VisibleTodoList'
 import AddTodo from './containers/AddTodo'
 import Footer from './components/Footer'
+// 新加的容器组件,评论部分
+import CommentList from './components/CommentList'
+
 
 // class App extends Component {
 //   render() {
