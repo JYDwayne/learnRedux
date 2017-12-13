@@ -48,8 +48,13 @@ export function fetchPosts(subreddit) {
 	return function(dispatch) {
 		dispatch(requestPosts(subreddit))
 		return fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0')
-			.then(response => response.json())
-			.then(json => dispatch(receivePosts(subreddit, json)))
+			.then(response => {
+				return response.json()
+			})
+			.then(json => {
+				console.log(json)
+				return dispatch(receivePosts(subreddit, json))
+			})
 	}
 }
 //Reddit应用的state

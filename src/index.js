@@ -45,7 +45,10 @@ console.log(store.getState())
 let testStore = createStore(redditReducer, applyMiddleware(thunkMiddleware))
 console.log(testStore.getState())
 testStore.subscribe(() => console.log(store.getState()))
-testStore.dispatch(fetchPosts('a'))
+testStore.dispatch(fetchPosts('a')).then(function(value) {
+	console.log(value)
+})
+
 
 //注册监听器
 store.subscribe(() => console.log(store.getState()))
