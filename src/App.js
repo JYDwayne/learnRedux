@@ -20,6 +20,9 @@ import Footer from './components/Footer'
 import CommentList from './components/CommentList'
 
 
+// commentTitle组件的导入
+import CommentTitle from './components/CommentTitle'
+
 // class App extends Component {
 //   render() {
 //     return (
@@ -36,17 +39,18 @@ import CommentList from './components/CommentList'
 //   }
 // }
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-      </div>
-    )
-  }
-}
+// todoList的结构
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <AddTodo />
+//         <VisibleTodoList />
+//         <Footer />
+//       </div>
+//     )
+//   }
+// }
 
 // class ClassWithObj extends Component {
 //   render() {
@@ -54,15 +58,14 @@ class App extends Component {
 //   }
 // }
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <ClassWithObj> <a href='http://www.baidu.com'>跳转!!!</a> </ClassWithObj>
-//         hello world!
-//       </div>
-//     )
-//   }
-// }
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <CommentTitle/>
+      </div>
+    )
+  }
+}
 
 export default App;

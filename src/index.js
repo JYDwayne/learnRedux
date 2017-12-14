@@ -53,6 +53,7 @@ testStore.dispatch(fetchPosts('a')).then(function(value) {
 //注册监听器
 store.subscribe(() => console.log(store.getState()))
 
+// todoList的主结构
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
