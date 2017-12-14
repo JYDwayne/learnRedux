@@ -21,7 +21,10 @@ import CommentList from './components/CommentList'
 
 
 // commentTitle组件的导入
-import CommentTitle from './components/CommentTitle'
+import CommentTitle from './components/CommentTitle';
+// 引入评论的容器组件
+import ComponentsContainer from './containers/ComponentsContainer'
+console.log(ComponentsContainer)
 
 // class App extends Component {
 //   render() {
@@ -62,7 +65,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CommentTitle/>
+        <ComponentsContainer/>
       </div>
     )
   }

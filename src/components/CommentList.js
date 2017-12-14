@@ -4,11 +4,16 @@
 import React, {
 	Component
 } from 'react';
+import CommentComponent from "./CommentComponent";
+
 class CommentList extends Component {
 	render() {
+		console.log(this.props.data)
 		return (
 			<div>
-				<p>这是评论内容(暂时都是写死的)</p>
+				{this.props.data.map((item, index) => {
+					return <CommentComponent key={index} {...item} />
+				})}
 			</div>
 		)
 	}

@@ -16,7 +16,8 @@ import {
 //引入reducer,用于创建store
 import todoApp from './reducer/reducer';
 import redditReducer from './reducer/redditReducers'
-
+//引入评论模块的reducer
+import receiveListData from './reducer/commentReducer'
 
 //引入redux-thunk中间件
 import thunkMiddleware from 'redux-thunk';
@@ -28,6 +29,10 @@ import fetchJsonp from 'fetch-jsonp'
 import {
 	fetchPosts
 } from './actions/redditAction'
+// 引入评论的异步action
+import {
+	fetchCommentData
+} from './actions/receiveListAction' 
 
 // fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0')
 // 	.then(function(response) {
@@ -39,15 +44,13 @@ import {
 
 // 创建store,并传入根组件
 let store = createStore(todoApp)
+// console.log(store.getState())
 
-console.log(store.getState())
-	// 创建另一个测试store
-let testStore = createStore(redditReducer, applyMiddleware(thunkMiddleware))
+// 创建另一个测试store
+let testStore = createStore(receiveListData, applyMiddleware(thunkMiddleware))
 console.log(testStore.getState())
-testStore.subscribe(() => console.log(store.getState()))
-testStore.dispatch(fetchPosts('a')).then(function(value) {
-	console.log(value)
-})
+testStore.subscribe(() => console.log(testStore.getState()))
+testStore.dispatch(fetchCommentData())
 
 
 //注册监听器
@@ -55,7 +58,7 @@ store.subscribe(() => console.log(store.getState()))
 
 // todoList的主结构
 ReactDOM.render(
-	<Provider store={store}>
+	<Provider store={testStore}>
 		<App />
 	</Provider>,
 	document.getElementById('root'));

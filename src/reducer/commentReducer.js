@@ -24,9 +24,11 @@
 //   ]
 // }
 
+//引入combinerReducer方法
+import { combineReducer } from 'redux'
+
 import {
-	RECEIVE_LIST,
-	receiveList
+	RECEIVE_LIST
 } from '../actions/receiveListAction';
 
 //引入fetch-jsonp
@@ -42,7 +44,7 @@ const initState = {
 function receiveListData( state = initState, action ) {
 	switch(action.type) {
 		case RECEIVE_LIST:
-			
+			console.log(action)
 			return Object.assign({}, state, {
 				totalCount: action.data.totalCount,
 				data: state.data.concat(action.data.data)
@@ -54,16 +56,4 @@ function receiveListData( state = initState, action ) {
 	}
 }
 
-//编写异步action
-function fetchData () {
-	//在这里,可以先dispatch一个action
-
-	return function (dispatch) {
-		return fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=273851&type=0&pic=0&_=1513219740671')
-		.then( (response) => response.json())
-		.then( (json) => {
-			console.log(json);
-			return dispatch(receiveList(json))
-		})
-	}
-}
+export default receiveListData;
