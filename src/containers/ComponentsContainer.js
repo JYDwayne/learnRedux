@@ -7,7 +7,8 @@ import CommentList from '../components/CommentList'
 function mapStateToProps(state) {
 	console.log(state)
 	return {
-		data: state.data
+		data: state.data,
+		totalCount: state.totalCount
 	}
 }
 

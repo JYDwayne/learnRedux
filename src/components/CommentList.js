@@ -11,6 +11,7 @@ class CommentList extends Component {
 		console.log(this.props.data)
 		return (
 			<div>
+				<div>共有评论:{this.props.totalCount} 条</div>
 				{this.props.data.map((item, index) => {
 					return <CommentComponent key={index} {...item} />
 				})}
