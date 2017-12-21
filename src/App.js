@@ -19,7 +19,6 @@ import Footer from './components/Footer'
 // 新加的容器组件,评论部分
 import CommentList from './components/CommentList'
 
-
 // commentTitle组件的导入
 import CommentTitle from './components/CommentTitle';
 // 引入评论的容器组件

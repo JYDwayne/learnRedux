@@ -25,10 +25,13 @@
 // }
 
 //引入combinerReducer方法
-import { combineReducer } from 'redux'
+import {
+	combineReducer
+} from 'redux'
 
 import {
-	RECEIVE_LIST
+	RECEIVE_LIST,
+	CHANGE_LIST
 } from '../actions/receiveListAction';
 
 //引入fetch-jsonp
@@ -41,18 +44,27 @@ const initState = {
 }
 
 //编写主reducer
-function receiveListData( state = initState, action ) {
-	switch(action.type) {
+function receiveListData(state = initState, action) {
+	console.log(action)
+	switch (action.type) {
 		case RECEIVE_LIST:
-			console.log(action)
 			return Object.assign({}, state, {
 				totalCount: action.data.totalCount,
-				data: state.data.concat(action.data.data)
+				data: state.data.concat(action.data.data),
+				totalPage: state.totalPage,
+				index: state.index
 			})
-		default :
-			
+		case CHANGE_LIST:
+			return Object.assign({}, state, {
+				totalCount: action.data.totalCount,
+				data: action.data.data,
+				totalPage: action.data.totalPage,
+				index: action.data.index
+			})
+		default:
+
 			return state
-			
+
 	}
 }
 

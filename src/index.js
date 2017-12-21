@@ -41,19 +41,17 @@ import {
 // 		console.log(json)
 // 	})
 let testStore;
-fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0')
+let params = "houseId=112489&type=0&pic=0&index=1";
+fetchJsonp('http://comment.house.ifeng.com/api/comment/list?' + params)
 	.then(function(response) {
 		return response.json()
 	}).then(function(json) {
-		console.log(json)
-		console.log({
-			totalCount: json.data.total,
-			data: json.data.data
-		})
 		testStore = createStore(
 			receiveListData, {
 				totalCount: json.data.totalCount,
-				data: json.data.data
+				data: json.data.data,
+				totalPage: json.data.totalPage,
+				index: json.data.index
 			},
 			applyMiddleware(thunkMiddleware)
 		);
