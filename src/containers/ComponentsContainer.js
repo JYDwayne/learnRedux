@@ -6,7 +6,8 @@ import {
 import CommentList from '../components/CommentList'
 //引入action
 import {
-	fetchNextPage
+	fetchNextPage,
+	fetchPrevPage
 } from '../actions/receiveListAction'
 
 // 定义 mapStateToProps 这个函数来指定如何把当前 Redux store state 映射到展示组件的 props 中
@@ -29,6 +30,7 @@ function mapDispatchToProps(dispatch) {
 		},
 		getPrevPage: function(currentPage) {
 			console.log('走上一页!!!', '当前页' + currentPage);
+			dispatch(fetchPrevPage(currentPage))
 		}
 	}
 }
