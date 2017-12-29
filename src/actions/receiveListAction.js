@@ -49,10 +49,10 @@ export function fetchNextPage(currentPage) {
 			return;
 		} else {
 			return fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0&index=' + (currentPage + 1))
-			.then((response) => response.json())
-			.then((json) => {
-				return dispatch(changePage(json))
-			})
+				.then((response) => response.json())
+				.then((json) => {
+					return dispatch(changePage(json))
+				})
 		}
 	}
 }
@@ -60,17 +60,15 @@ export function fetchNextPage(currentPage) {
 //获取上一页异步action
 export function fetchPrevPage(currentPage) {
 	return function(dispatch, getState) {
-		if (getState().totalPage > currentPage - 1) {
+		if ((currentPage - 1) < 1) {
 			alert('无效操作');
 			return;
 		} else {
 			return fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0&index=' + (currentPage - 1))
-			.then((response) => response.json())
-			.then((json) => {
-				return dispatch(changePage(json))
-			})
+				.then((response) => response.json())
+				.then((json) => {
+					return dispatch(changePage(json))
+				})
 		}
 	}
 }
-
-

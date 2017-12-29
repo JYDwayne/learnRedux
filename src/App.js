@@ -23,7 +23,7 @@ import CommentList from './components/CommentList'
 import CommentTitle from './components/CommentTitle';
 // 引入评论的容器组件
 import ComponentsContainer from './containers/ComponentsContainer';
-
+import Reversebtn from "./components/CommentTitle";
 // todoList的结构
 // class App extends Component {
 //   render() {
@@ -48,6 +48,7 @@ class App extends Component {
     return (
       <div>
         <ComponentsContainer/>
+        <Reversebtn/>
       </div>
     )
   }
