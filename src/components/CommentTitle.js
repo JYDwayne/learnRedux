@@ -9,16 +9,25 @@ class CommentTitle extends Component {
 		this.state = {
 			name: 'dwayne',
 			count: 10,
-			clickAble: true
+			clickAble: true,
+			phoneNum: '',
+			password: ''
 		}
-		this.countChnage = this.countChnage.bind(this)
+		this.countChnage = this.countChnage.bind(this);
+		this.changePhoneNum = this.changePhoneNum.bind(this);
 	}
 	render() {
 		return (
 			<div>
 				<div>年龄{this.state.age}</div>
 				<div>时间{this.state.count}</div>
-				<button onClick={this.countChnage}>{this.state.clickAble? "发送验证码":this.state.count + 'S'}</button>
+				<div>登录部分</div>
+				<input type="text" name="fname" placeholder="请输入手机号码" value={this.state.phoneNum} onChange={this.changePhoneNum}/><br/>
+				{/*<button onClick={this.countChnage}>{this.state.clickAble? "发送验证码":this.state.count + 'S'}</button><br/>*/}
+				<input type="password" name="fname" placeholder="请输入密码" value={this.state.password}/>
+				<div>手机号:{this.state.phoneNum},密码:{this.state.password}</div>
+
+				<button>登录</button>
 			</div>
 		)
 	}
@@ -26,12 +35,6 @@ class CommentTitle extends Component {
 		if (!this.state.clickAble) {
 			return
 		}
-		// this.setState(prevState => {
-		// 	return {
-		// 		name: prevState.name.toUpperCase(),
-		// 		age: 35
-		// 	}
-		// })
 		this.setState({
 			clickAble: false
 		})
@@ -44,11 +47,15 @@ class CommentTitle extends Component {
 				})
 				return
 			}
-
 			this.setState(prevState => ({
 				count: prevState.count - 1
 			}))
 		}, 1000)
+	}
+	changePhoneNum(event) {
+		this.setState({
+			phoneNum: event.target.value
+		})
 	}
 }
 

@@ -40,6 +40,7 @@ import fetchJsonp from 'fetch-jsonp';
 // 初始化数据
 const initState = {
 	totalCount: 0,
+	loginState: 0,
 	data: []
 }
 

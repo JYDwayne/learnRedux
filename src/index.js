@@ -51,7 +51,8 @@ fetchJsonp('http://comment.house.ifeng.com/api/comment/list?' + params)
 				totalCount: json.data.totalCount,
 				data: json.data.data,
 				totalPage: json.data.totalPage,
-				index: json.data.index
+				index: json.data.index,
+				loginStatus: 0
 			},
 			applyMiddleware(thunkMiddleware)
 		);
@@ -76,7 +77,7 @@ fetchJsonp('http://comment.house.ifeng.com/api/comment/list?' + params)
 
 
 // 创建store,并传入根组件
-let store = createStore(todoApp)
+// let store = createStore(todoApp)
 // console.log(store.getState())
 
 // 创建另一个测试store
@@ -86,4 +87,4 @@ let store = createStore(todoApp)
 // testStore.dispatch(fetchCommentData())
 
 //注册监听器
-store.subscribe(() => console.log(store.getState()))
+// store.subscribe(() => console.log(store.getState()))

@@ -25,11 +25,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		getNextPage: function(currentPage) {
-			console.log('走下一页!!!', '当前页' + currentPage);
 			dispatch(fetchNextPage(currentPage))
 		},
 		getPrevPage: function(currentPage) {
-			console.log('走上一页!!!', '当前页' + currentPage);
 			dispatch(fetchPrevPage(currentPage))
 		}
 	}
