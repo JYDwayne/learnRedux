@@ -7,6 +7,9 @@ import React, {
 import CommentComponent from "./CommentComponent";
 
 class CommentList extends Component {
+	componentWillMount() {
+		this.props.initDataFromService()
+	}
 	render() {
 		return (
 			<div>

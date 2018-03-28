@@ -9,7 +9,7 @@ export const GET_PREV_PAGE = 'GET_PREV_PAGE';
 
 export const CHANGE_LIST = 'CHANGE_LIST';
 
-export function receiveList(data) {
+export function receiveList(data) {//初始化获取数据
 	return {
 		type: RECEIVE_LIST,
 		data: data.data
@@ -70,5 +70,16 @@ export function fetchPrevPage(currentPage) {
 					return dispatch(changePage(json))
 				})
 		}
+	}
+}
+
+//初始化获取数据的异步action
+export function initDataFromService() {
+	return function(dispatch) {
+		return fetchJsonp('http://comment.house.ifeng.com/api/comment/list?houseId=112489&type=0&pic=0&index=1')
+				.then((response) => response.json())
+				.then((json) => {
+					return dispatch(changePage(json))
+				})
 	}
 }
